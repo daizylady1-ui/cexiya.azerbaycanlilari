@@ -1,0 +1,146 @@
+# ─────────────────────────────────────────────────────────────
+#  Cexiya Azərbaycanlıları — ежедневный автопостинг
+#  Все секреты (ключи, токены) задаются через переменные окружения /
+#  GitHub Secrets, НЕ в этом файле.
+# ─────────────────────────────────────────────────────────────
+
+account:
+  handle: "@cexiyaazerbaycanlilari"
+  name: "Cexiya Azərbaycanlıları"
+  hashtags: "#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+
+timezone: "Europe/Prague"
+
+ai:
+  model: "claude-opus-5"        # можно заменить на claude-sonnet-5 (дешевле)
+  max_page_chars: 9000          # сколько текста брать с каждой страницы-источника
+
+# ── Оформление ────────────────────────────────────────────────
+# Шаблоны Canva лежат в assets/templates/ (1080×1350):
+#   {template}_cover.jpg — обложка с квадратом "xxxx"
+#   {template}_a/_b/_c/_d.jpg — слайды (a: текст+3 фото, b: 2 текста+2 фото,
+#                               c: большой текст, d: одна панель)
+#   weather.jpg + weather_icons.jpg — недельная погода
+theme:
+  logo: "assets/logo.jpg"          # логотип на светлом фоне (фон вырезается автоматически)
+  # Фирменный шрифт шаблонов — Garet (Heavy для заголовков, Book для текста).
+  # Файлы Garet-Heavy.otf/.ttf и Garet-Book.otf/.ttf положите в assets/fonts/.
+  # Дальше по списку — запасные шрифты, если Garet не найден.
+  font_bold: ["Garet-Heavy", "Garet Heavy", "GaretHeavy", "Montserrat-Bold", "DejaVuSans-Bold", "segoeuib", "arialbd"]
+  font_regular: ["Garet-Book", "Garet Book", "GaretBook", "Montserrat-Regular", "DejaVuSans", "segoeui", "arial"]
+
+# ── 3 карусели ───────────────────────────────────────────────
+carousels:
+  - key: laws
+    label: "FAYDALI MƏLUMAT"
+    template: info         # красный шаблон «faydalı məlumatlar»
+    accent: "#E0442B"
+    max_items: 4
+    brief: >
+      Çexiyada yaşayan əcnəbilər (xüsusilə azərbaycanlılar) üçün vacib olan YENİ qanunlar,
+      qanun dəyişiklikləri, viza/yaşayış icazəsi, iş icazəsi, vergi, sığorta, sosial ödənişlər,
+      sürücülük vəsiqəsi, qiymət və tariflərdəki rəsmi dəyişikliklər. Yalnız son 10 günün və ya
+      yaxın vaxtda qüvvəyə minəcək dəyişikliklər. Hər maddədə nə vaxtdan qüvvəyə mindiyini yaz.
+  - key: events
+    label: "TƏDBİR"
+    template: events       # золотой шаблон «maraqlı tədbirlər»
+    accent: "#C9A227"
+    events: true           # в подзаголовке слайда — дата, время, место
+    max_items: 6
+    brief: >
+      Bu gündən etibarən növbəti 7 gün ərzində Praqada (və Brno, Plzen, Ostrava,
+      České Budějovice) keçiriləcək maraqlı tədbirlər: konsertlər, festivallar, sərgilər,
+      bazarlar, pulsuz tədbirlər, miqrantlar üçün kurslar və görüşlər. Hər tədbir üçün
+      tarix, saat və məkanı mütləq göstər. Keçmiş tarixli tədbirləri seçmə.
+  - key: news
+    label: "XƏBƏR"
+    template: news         # синий шаблон «son xəbərlər»
+    accent: "#2F80C0"
+    max_items: 5
+    brief: >
+      Çexiya, Praqa, Brno, Plzen, Ostrava, České Budějovice üzrə günün ən vacib xəbərləri.
+      QADAĞANDIR: cinayət, qətl, zorakılıq, qəza, ölüm, məhkəmə-kriminal xəbərlər.
+      Üstünlük: nəqliyyat, qiymətlər, hava xəbərdarlıqları, şəhər xidmətləri, iqtisadiyyat,
+      təhsil, səhiyyə, gündəlik həyata təsir edən xəbərlər.
+
+# ── Источники ────────────────────────────────────────────────
+# rss:   RSS-ленты (быстро и надёжно)
+# pages: обычные страницы — текст извлекается и отдаётся Claude
+# Instagram-аккаунты НЕ парсятся (запрещено правилами Instagram) —
+# используйте их вручную как источник идей.
+sources:
+  laws:
+    rss:
+      - "gnews:cizinci zákon OR novela OR vízum OR povolení k pobytu"
+      - "gnews:nový zákon od 1. OR změna zákona Česko"
+      - "gnews:ministerstvo vnitra cizinci"
+    pages:
+      - "https://icpraha.com/en"
+      - "https://migrace.com/"
+      - "https://www.meta-ops.eu/"
+      - "https://p-p-i.cz/"
+      - "https://www.opu.cz/"
+      - "https://metropolevsech.eu/cs/"
+  events:
+    rss: []
+    pages:
+      - "https://prague.eu/en/akce-kategorie/events/?pg=1"
+      - "https://aroundprague.cz/poster/"
+      - "https://fienta.com/ru/o/27693"
+      - "https://fridayticket.com/"
+      - "https://www.vinegret.cz/"
+      - "https://the-cesko.cz/"
+      - "https://www.cicops.cz/cz/"
+      - "https://www.charita.cz/"
+      - "https://novaskolaops.cz/clanek/2419-rozlety"
+  news:
+    rss:
+      - "https://www.irozhlas.cz/rss/irozhlas"
+      - "https://www.novinky.cz/rss"
+      - "gnews:Praha"
+      - "gnews:Brno"
+      - "gnews:Plzeň"
+      - "gnews:Ostrava"
+      - "gnews:České Budějovice"
+    pages:
+      - "https://www.vinegret.cz/"
+      - "https://the-cesko.cz/"
+
+# ── Reels (2 шт.) ────────────────────────────────────────────
+reels:
+  - key: reel_events
+    title: "Bu həftə Praqada"
+    from: [events]
+    max_items: 5
+  - key: reel_news
+    title: "Çexiyada günün xəbərləri"
+    from: [news, laws]
+    max_items: 5
+reel_settings:
+  seconds_per_item: 5
+  intro_seconds: 3
+  # Ваши собственные видео (например, Çexiya esas.mp4) положите в assets/clips/ —
+  # они будут использоваться как фон. Недостающее берётся со стоков Pexels
+  # (бесплатная лицензия, нужен PEXELS_API_KEY). Если нет ни того ни другого —
+  # фоном станут слайды карусели.
+  intro_clip: "assets/clips/intro.mp4"
+  music_dir: "assets/music"      # mp3 без авторских ограничений; пусто = тишина
+  logo_band_bottom: 330          # отступ полосы с логотипом от нижнего края (px)
+
+# ── Погода для сторис ───────────────────────────────────────
+# Порядок фиксирован шаблоном weather.jpg: Praha (крупно), затем строки Brno, Plzen, Ostrava
+weather_cities:
+  - {name: "Praha", lat: 50.0755, lon: 14.4378}
+  - {name: "Brno", lat: 49.1951, lon: 16.6068}
+  - {name: "Plzen", lat: 49.7384, lon: 13.3736}
+  - {name: "Ostrava", lat: 49.8209, lon: 18.2625}
+
+# ── Публикация ──────────────────────────────────────────────
+publish:
+  graph_version: "v23.0"
+  gap_seconds: 30              # пауза между публикациями
+  approval: telegram           # telegram | none
+  approval_timeout_min: 90     # сколько ждать ответа "ok" в Telegram
+  # Шаблон публичного URL для медиафайлов (Instagram скачивает файлы по ссылке).
+  # {repo} = owner/name, {sha} = коммит ветки media, {path} = путь к файлу
+  media_url_template: "https://cdn.jsdelivr.net/gh/{repo}@{sha}/{path}"

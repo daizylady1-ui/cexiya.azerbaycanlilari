@@ -1,0 +1,80 @@
+name: Daily Instagram
+
+on:
+  schedule:
+    # GitHub cron работает в UTC: 05:00 UTC = 07:00 летом / 06:00 зимой по Праге
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+    inputs:
+      no_approval:
+        description: "Публиковать без подтверждения в Telegram"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency: daily-instagram
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: System packages (ffmpeg, шрифты с азербайджанскими буквами)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-montserrat fonts-dejavu-core
+
+      - run: pip install -r requirements.txt
+
+      - name: Date
+        run: echo "DATE=$(TZ=Europe/Prague date +%F)" >> "$GITHUB_ENV"
+
+      - name: Generate content
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: python -m cexiya generate --date "$DATE"
+
+      - name: Save state (чтобы не повторять новости)
+        run: |
+          git config user.name "cexiya-bot"
+          git config user.email "cexiya-bot@users.noreply.github.com"
+          git add state/used_urls.json
+          git diff --cached --quiet || (git commit -m "state $DATE" && git push)
+
+      - name: Upload media to branch "media" (публичные ссылки для Instagram)
+        run: |
+          mkdir -p /tmp/media && cp -r "out/$DATE" "/tmp/media/$DATE"
+          cd /tmp/media
+          git init -q -b media
+          git config user.name "cexiya-bot"
+          git config user.email "cexiya-bot@users.noreply.github.com"
+          git add . && git commit -qm "media $DATE"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" media
+          echo "MEDIA_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Approve in Telegram & publish
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          FLAGS=""
+          if [ "${{ inputs.no_approval }}" = "true" ]; then FLAGS="--no-approval"; fi
+          python -m cexiya publish --date "$DATE" $FLAGS
+
+      - name: Keep drafts as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-${{ env.DATE }}
+          path: out/${{ env.DATE }}
+          retention-days: 7
