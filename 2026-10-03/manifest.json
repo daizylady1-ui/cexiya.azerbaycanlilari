@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-03",
+  "posts": [
+    {
+      "key": "laws",
+      "accent": "#E0442B",
+      "files": [
+        "laws/01.jpg",
+        "laws/02.jpg",
+        "laws/03.jpg",
+        "laws/04.jpg",
+        "laws/05.jpg"
+      ],
+      "caption": "Oktyabrın əvvəlində Çexiyada əcnəbilər üçün bir neçə praktiki dəyişiklik var — qısa icmal:\n\n🏢 Usti nad Labemdə KACPU 1 oktyabrdan yeni qrafiklə işləyir: bazar ertəsi və çərşənbə 8:00–16:00.\n📞 SIMI-nin sosial şöbəsi məhdud rejimdədir — getməzdən əvvəl zəng edin.\n🩺 2026-cı il üçün tibbi sığortadakı yeniliklər Praqa portalında bir yerə toplanıb.\n🚗 Sürücülük vəsiqəsinin dəyişdirilməsi üzrə rəsmi təlimat — sənədləri əvvəlcədən yoxlayın.\n\nFaydalı olsa, yadda saxlayın və dostlarınızla paylaşın!\n\nMənbələr: Poradna pro integraci, migrace.com, metropolevsech.eu\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    },
+    {
+      "key": "events",
+      "accent": "#C9A227",
+      "files": [
+        "events/01.jpg",
+        "events/02.jpg",
+        "events/03.jpg",
+        "events/04.jpg",
+        "events/05.jpg",
+        "events/06.jpg",
+        "events/07.jpg"
+      ],
+      "caption": "Həftəsonu və qarşıdakı günlər üçün Praqadan 6 ideya topladıq — həm ucuz, həm maraqlı!\n\n🏛 Kramarj Villasına pulsuz giriş: 3 oktyabr, 10:00—17:00.\n🌭 Street food və şərab Xodov qalasında: 3 oktyabr, 11:00—19:00.\n🍷 Oktyabr şərab dequstasiyası Strelecki adasında: 3 oktyabr, 13:00—21:45.\n💃 PocketArt: Fairy Tales rəqs tamaşası, Jatka78: 3 oktyabr, 19:30.\n🥘 Dadlı ləzzətlər festivalı, Novoměstská radnice: 4 oktyabr, 10:00—18:00.\n📚 Uşaqlar üçün pulsuz dərslər (Rozlety), Karlin: çərşənbə axşamı və çərşənbə, 17:00—19:00.\n\nFaydalı olsa, yadda saxlayın və dostlarınızla paylaşın!\n\nMənbələr: prague.eu, novaskolaops.cz\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    },
+    {
+      "key": "news",
+      "accent": "#2F80C0",
+      "files": [
+        "news/01.jpg",
+        "news/02.jpg",
+        "news/03.jpg",
+        "news/04.jpg",
+        "news/05.jpg",
+        "news/06.jpg"
+      ],
+      "caption": "Bu gün Çexiyada diqqətinizi çəkəcək 5 xəbər:\n\n🌤️ Günəşli hava çərşənbəyə qədər, cümə axşamından soyuqlar və yağış başlayır.\n⛽ Dövlət yanacağa maksimum qiymət tətbiq etdi — benzin və dizel ucuzlaşır.\n🚌 Cənubi Çexiyada bəzi avtobus marşrutlarının cədvəli bazardan dəyişir.\n🚆 Leo Express bazar ertəsindən Frankfurt–Praqa–Przemyśl xəttini dayandırır.\n🏥 Ostravada Ruhi Sağlamlıq Mərkəzi yeni, daha geniş binaya köçür.\n\nFaydalı olsa, yadda saxlayın və dostlarınızla paylaşın!\n\nMənbələr: iROZHLAS, Novinky.cz, Jižní Čechy Teď!, Zdopravy.cz\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    }
+  ],
+  "reels": [
+    {
+      "key": "reel_events",
+      "file": "reel_events.mp4",
+      "caption": "Praqada bu günlər: pulsuz Kramarj Villası, şərab dequstasiyası, street food və uşaqlar üçün pulsuz dərslər. Tarix və saatlar videoda!\n\nMənbələr: prague.eu\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    },
+    {
+      "key": "reel_news",
+      "file": "reel_news.mp4",
+      "caption": "Çexiyada günün əsas xəbərləri: hava çərşənbəyə qədər isti qalır, yanacaq ucuzlaşır, avtobus və qatar cədvəllərində dəyişikliklər var.\n\nMənbələr: iROZHLAS, Novinky.cz, Jižní Čechy Teď!, Zdopravy.cz\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    }
+  ],
+  "stories": [
+    {
+      "kind": "weather",
+      "file": "story_1_weather.jpg",
+      "video": false
+    },
+    {
+      "kind": "promo",
+      "file": "story_2_laws.jpg",
+      "video": false
+    },
+    {
+      "kind": "promo",
+      "file": "story_3_events.jpg",
+      "video": false
+    },
+    {
+      "kind": "promo",
+      "file": "story_4_news.jpg",
+      "video": false
+    },
+    {
+      "kind": "reel",
+      "file": "reel_events.mp4",
+      "video": true
+    },
+    {
+      "kind": "reel",
+      "file": "reel_news.mp4",
+      "video": true
+    }
+  ]
+}
