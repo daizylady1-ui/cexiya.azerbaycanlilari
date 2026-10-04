@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-04",
+  "posts": [
+    {
+      "key": "laws",
+      "accent": "#E0442B",
+      "files": [
+        "laws/01.jpg",
+        "laws/02.jpg",
+        "laws/03.jpg",
+        "laws/04.jpg"
+      ],
+      "caption": "Çexiyada bu həftə qüvvəyə minən və bizə toxunan rəsmi yeniliklər:\n\n🏢 1 oktyabrdan Usti nad Labemdəki KACPU-nun qəbul saatları dəyişib — çərşənbə axşamı və cümə axşamı bağlıdır.\n📞 SIMI-nin sosial şöbəsi 1 oktyabrdan məhdud rejimdə işləyir, əvvəlcədən zəng edin.\n🩺 2026 üçün tibbi sığorta və səhiyyədəki ən vacib dəyişikliklərin icmalı Praqa Magistratının portalında yerləşdirilib.\n\nFaydalı olsa, yadda saxlayın və dostlarınızla paylaşın!\n\nMənbələr: Poradna pro integraci, migrace.com, metropolevsech.eu\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    },
+    {
+      "key": "events",
+      "accent": "#C9A227",
+      "files": [
+        "events/01.jpg",
+        "events/02.jpg",
+        "events/03.jpg",
+        "events/04.jpg",
+        "events/05.jpg",
+        "events/06.jpg",
+        "events/07.jpg"
+      ],
+      "caption": "Həftəsonu və qarşıdakı günlər üçün Praqada 6 maraqlı seçim topladıq 👇\n\n🍰 Yeni Şəhər Ratuşasında Dadlı Ləzzətlər Festivalı — 4 oktyabr, 10:00—18:00\n🍽 Restaurant Week: üç şəhərdə 490 və 790 kronluq xüsusi menyular\n🍷 Velká Říjnová Degustace — Moraviya şərablarının böyük dequstasiyası\n⛪️ Bржevnov monastırında Posvícení: yemək, sənətkarlıq və əyləncə\n📚 Praqa 8-də uşaqlar üçün pulsuz dərslər (Rozlety), çərşənbə axşamı və çərşənbə 17:00—19:00\n💼 Əcnəbilər üçün pulsuz Jobklub: CV, motivasiya məktubu və iş zədəsi mövzusunda\n\nFaydalı olsa, yadda saxlayın və dostlarınızla paylaşın!\n\nMənbələr: prague.eu, The Česko, Nová škola, cicops.cz\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    },
+    {
+      "key": "news",
+      "accent": "#2F80C0",
+      "files": [
+        "news/01.jpg",
+        "news/02.jpg",
+        "news/03.jpg",
+        "news/04.jpg",
+        "news/05.jpg",
+        "news/06.jpg"
+      ],
+      "caption": "Çexiyada günün ən vacib xəbərləri — bir baxışda:\n\n🚧 Brnoda Pisarki və Hlinki tunelləri 40 günə təmirə bağlanır.\n🚌 Cənubi Çexiyada avtobus cədvəlləri yenidən dəyişdi, bəzi birbaşa reyslər qayıdır.\n🧠 Ostravada ruhi sağlamlıq mərkəzi daha çox insanı qəbul edəcək, iş saatları 12 saata çıxır.\n🌳 Plzendə Loxotin parkının 90 milyon kronluq yenilənməsi başa çatdı.\n✈️ Praqa aeroportu aviaşirkətlər üçün rüsumları artırır və transfer qovşağına çevrilmək istəyir.\n\nFaydalı olsa, yadda saxlayın və dostlarınızla paylaşın!\n\nMənbələr: Zdopravy.cz, novinky.cz, iROZHLAS, Hospodářské noviny\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    }
+  ],
+  "reels": [
+    {
+      "key": "reel_events",
+      "file": "reel_events.mp4",
+      "caption": "Praqada bu həftə: festivallar, şərab dequstasiyası və əcnəbilər üçün pulsuz kurslar. Hamısını bir videoda topladıq!\n\nMənbələr: prague.eu, The Česko, Nová škola\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    },
+    {
+      "key": "reel_news",
+      "file": "reel_news.mp4",
+      "caption": "Brnoda tunellər bağlanır, Cənubi Çexiyada avtobus cədvəlləri dəyişir, Ostravada ruhi sağlamlıq mərkəzi genişlənir. Çexiyanın günün xəbərləri bir videoda!\n\nMənbələr: Zdopravy.cz, novinky.cz, iROZHLAS, Hospodářské noviny\n\n#cexiyaazerbaycanlilari #çexiya #praqa #azərbaycanlılar #czechia #praha #brno"
+    }
+  ],
+  "stories": [
+    {
+      "kind": "weather",
+      "file": "story_1_weather.jpg",
+      "video": false
+    },
+    {
+      "kind": "promo",
+      "file": "story_2_laws.jpg",
+      "video": false
+    },
+    {
+      "kind": "promo",
+      "file": "story_3_events.jpg",
+      "video": false
+    },
+    {
+      "kind": "promo",
+      "file": "story_4_news.jpg",
+      "video": false
+    },
+    {
+      "kind": "reel",
+      "file": "reel_events.mp4",
+      "video": true
+    },
+    {
+      "kind": "reel",
+      "file": "reel_news.mp4",
+      "video": true
+    }
+  ]
+}
